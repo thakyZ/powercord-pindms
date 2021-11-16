@@ -177,7 +177,7 @@ class Settings extends React.Component {
                       });
                       this.state.playing[sound] = player;
                     } catch (e) {
-                      console.log('%c[PinDMs]', 'color: #ffeb3b', e);
+                      this.log(e);
                     }
                   }
                 }}

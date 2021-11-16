@@ -68,15 +68,13 @@ function setupContextMenu (settingsMgr, channel) {
     itemGroups: [ items ]
   });
 
-  const menucont = React.createElement(
+  return React.createElement(
     'div',
     {
       id: 'pd-add-pin-context-container'
     },
     menu
   );
-
-  return menucont;
 }
 
 /*

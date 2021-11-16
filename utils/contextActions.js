@@ -1,11 +1,11 @@
 const { open } = require('powercord/modal');
-const NewCategoryModal = require('../components/NewCategoryModal');
+const newCategoryModal = require('../components/NewCategoryModal');
 
 function addToNewCategoryModal (keys, id, callback) {
-  open(NewCategoryModal(keys, id, callback));
+  open(newCategoryModal(keys, id, callback));
 }
 
-function addToServerList (settingsMgr, id, callback) {
+function addToServerList (settingsMgr, id) {
   console.log(id);
 }
 

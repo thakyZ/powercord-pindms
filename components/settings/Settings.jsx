@@ -168,13 +168,17 @@ class Settings extends React.Component {
                     this.state.playing[sound].pause();
                     delete this.state.playing[sound];
                   } else {
-                    const player = new Audio(this.state.playing[sound].url);
-                    player.volume = this.state.notifsounds[sound] ? this.state.notifsounds[sound].volume || 0.5 : 0.5;
-                    player.play();
-                    player.addEventListener('ended', () => {
-                      delete this.state.playing[sound];
-                    });
-                    this.state.playing[sound] = player;
+                    try {
+                      const player = new Audio(this.state.notifsounds[sound].url);
+                      player.volume = this.state.notifsounds[sound] ? this.state.notifsounds[sound].volume || 0.5 : 0.5;
+                      player.play();
+                      player.addEventListener('ended', () => {
+                        delete this.state.playing[sound];
+                      });
+                      this.state.playing[sound] = player;
+                    } catch (e) {
+                      console.log('%c[PinDMs]', 'color: #ffeb3b', e);
+                    }
                   }
                 }}
                 className="pd-notification-sounds-icon"

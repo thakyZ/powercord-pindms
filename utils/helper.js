@@ -2,10 +2,9 @@ const { getModule } = require('powercord/webpack');
 
 module.exports = {
   async getDefaultModule (module) {
-    const mod = await getModule(
+    return getModule(
       (m) => m.default && m.default.displayName === module
     );
-    return mod;
   },
 
   getChannelListCategory (settingsMgr, id) {
@@ -49,8 +48,7 @@ module.exports = {
   },
 
   async getDefaultModuleMethodByKeyword (keyword) {
-    const mod = await getModule((m) => this._getDefaultMethodByKeyword(m, keyword));
-    return mod;
+    return getModule((m) => this._getDefaultMethodByKeyword(m, keyword));
   },
 
   debounce (func, timeout = 300) {

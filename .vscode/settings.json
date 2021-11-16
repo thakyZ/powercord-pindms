@@ -1,0 +1,13 @@
+{
+  "jshint.enable": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    "": ""
+  },
+  "eslint.rules.customizations": [
+    {
+      "rule": ""
+    }
+  ],
+  "cSpell.enabled": false
+}
